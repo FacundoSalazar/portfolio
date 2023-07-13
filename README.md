@@ -1,1 +1,1 @@
-# Portfolio using Astro
+# Portfolio using Astro and Tailwind.
