@@ -1,0 +1,86 @@
+body {
+    background: rgb(0,0,0);
+    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(51,48,0,1) 23%, rgba(255,192,83,1) 59%, rgba(255,255,255,1) 90%);
+}
+.bkgHeader {
+    background-color: #f2f2f2;
+}
+header a {
+    transition: color 0.3s, background-color 0.3s, border-radius 0.3s;
+}
+header a:hover {
+    background-color: rgb(255, 255, 255);
+    border-radius: 15px;
+    color: #333;
+}
+.activeSection {
+    background-color: rgb(255, 192, 83);
+    color: #333;
+    border-radius: 25px;
+}
+
+
+
+
+main h1::selection {
+    background-color: rgb(255, 192, 83);
+    color: #f2f2f2;
+}
+h3::selection {
+    background-color: rgb(255, 192, 83);
+    color: #f2f2f2;
+}
+main h3 {
+    letter-spacing: 1px;
+}
+p {
+    line-height: 25px;
+    color: #f2f2f2;
+    font-weight: 400;
+    margin: 0;
+    font-size: 16px;
+    text-wrap: balance;
+    letter-spacing: 1px;
+}
+p::selection {
+    background-color: rgb(255, 192, 83);
+}
+main p a {
+
+    color: #f2f2f2;
+}
+main p a::selection {
+    background-color: rgb(255, 192, 83);
+}
+.socials {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 25px;
+}
+.socials button {
+    padding: 8px 10px;
+    width: 100px;
+    border-radius: 50px;
+    background-color:rgb(255, 192, 83) ;
+    color: #333;
+    transition: background-color 0.3s;
+    letter-spacing: 1px;
+    font-size: 12px;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    border: 1px solid transparent;
+}
+.socials button:hover {
+    background-color: #f2f2f2;
+}
+.socials a {
+    border-bottom: 1px solid transparent;
+    transition: border-bottom 0.3s;
+}
+.socials a:hover {
+    border-bottom: 1px solid rgb(255, 192, 83);
+}
+
+#projects {
+    
+}

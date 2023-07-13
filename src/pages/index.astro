@@ -1,0 +1,33 @@
+---
+import Header from '../components/Header.astro'
+import Main from '../components/Main.astro'
+import Projects from '../components/Projects.astro'
+import Contact from '../components/Contact.astro';
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="stylesheet" href="src/index.css">
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Facundo Salazar</title>
+	</head>
+	<body class="font-mono">
+		<Header />
+		<Main />
+		<Projects />
+		<Contact />
+	</body>
+</html>
+
+<script>
+    const header = document.querySelector('header');
+	console.log(header)
+	if (header.offsetTop > 100) {
+		header.classList.add('bkgHeader')
+	} else {
+		header.classList.remove('bkgHeader');
+	}
+</script>
