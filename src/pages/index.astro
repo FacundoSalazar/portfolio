@@ -3,6 +3,7 @@ import Header from '../components/Header.astro'
 import Main from '../components/Main.astro'
 import Projects from '../components/Projects.astro'
 import Contact from '../components/Contact.astro';
+import BackToHome from '../components/BackToHome.astro';
 ---
 
 <html lang="en">
@@ -19,15 +20,24 @@ import Contact from '../components/Contact.astro';
 		<Main />
 		<Projects />
 		<Contact />
+		<BackToHome />
 	</body>
 </html>
 
 <script>
-    const header = document.querySelector('header');
-	console.log(header)
-	if (header.offsetTop > 100) {
-		header.classList.add('bkgHeader')
-	} else {
-		header.classList.remove('bkgHeader');
+	const backToHome = document.querySelector('#backToHome');
+	window.addEventListener('scroll', () => {
+	if (window.pageYOffset > 300) {
+		backToHome.classList.remove('opacity-0');
+	} else{
+		backToHome.classList.add('opacity-0');
 	}
+	});
+	backToHome.addEventListener('click', () => {
+		window.scrollTo({
+			top: 0,
+			left: 0,
+			behavior: 'smooth'
+		})
+	})
 </script>
