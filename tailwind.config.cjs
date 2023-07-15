@@ -11,6 +11,9 @@ module.exports = {
 			},
 			backgroundColor: {
 				secondaryColor: '#f2f2f2'
+			},
+			boxShadow: {
+				lowShadow: '2px 2px 4px rgba(0,0,0, 0.8);'
 			}
 		},
 	},
