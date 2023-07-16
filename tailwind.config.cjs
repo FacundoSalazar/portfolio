@@ -13,7 +13,7 @@ module.exports = {
 				secondaryColor: '#f2f2f2'
 			},
 			boxShadow: {
-				lowShadow: '2px 2px 4px rgba(0,0,0, 0.8);'
+				lowShadow: '2px 2px 6px rgba(0,0,0, 0.3);'
 			}
 		},
 	},
