@@ -5,13 +5,14 @@ import InputForm from "./InputForm.astro";
 
 <section id="contact" class=" w-screen flex justify-center flex-col p-10 items-center">
     <SectionTitle sectionTitle="BE IN TOUCH"/>
-    <form action="" class="flex flex-col w-[80vw] gap-5 mt-10">
+    <form action="" class="flex flex-col w-[80vw] gap-5 mt-10 md:items-center">
         <div class="flex flex-col gap-3">
             <InputForm id="name" label="Write your name or company" type="text" placeholder="Name"/>
             <InputForm id="email" label="Write your email" type="email" placeholder="Email"/>
         </div>
-        <textarea id="textarea" name="textarea" id="" cols="30" rows="10" class="border text-center resize-none bg-transparent p-5 rounded-md border-slate-600 outline-none placeholder:text-slate-500 text-slate-700" placeholder="Write here and we'll be in touch.." />
-            <input type="submit" value="SEND" class="w-[50%] self-center rounded-full text-white py-2 tracking-widest shadow-xl bg-slate-700 active:opacity-60 hover:w-[55%] transition-[width] duration-300" />
+        <label for="textarea" class="text-center text-slate-700">What can I do for you?</label>
+            <textarea id="textarea" name="textarea" id="" cols="30" rows="5" class="border text-center resize-none bg-transparent p-5 rounded-md border-slate-600 outline-none placeholder:text-slate-500 text-slate-700 md:w-[50vw]" placeholder="Write here and we'll be in touch.." />
+            <input id="submit" type="submit" value="SEND" class="cursor-pointer w-[50%] self-center rounded-full text-white py-2 tracking-widest shadow-lowShadow bg-slate-700 transition-colors active:opacity-60 hover:text-slate-700 hover:bg-secondaryColor duration-300 md:w-[35%]" />
     </form>
 </section>
 
@@ -19,4 +20,10 @@ import InputForm from "./InputForm.astro";
     const nameField = document.querySelector('#name');
     const emailField = document.querySelector('#email');
     const textField = document.querySelector('#textarea');
+    const submit = document.querySelector('#submit')
+    submit.addEventListener('click', () => {
+        if( nameField.value === "") {
+            alert('There are empty fields. Please, complete them.')
+        }
+    })
 </script>
