@@ -4,7 +4,7 @@ import Main from '../components/Main.astro'
 import Projects from '../components/Projects.astro'
 import Contact from '../components/Contact.astro';
 import BackToHome from '../components/BackToHome.astro';
-import logo from '/fs.svg'
+import logo from '/fs.svg';
 ---
 
 <html lang="en">
@@ -22,7 +22,7 @@ import logo from '/fs.svg'
 		<meta property="og:image" content={logo} />
 		<meta http-equiv="Content-Language" content="es" />
 	</head>
-	<body class="font-mono">
+	<body class="font-VictorMono overflow-x-hidden">
 		<Header />
 		<Main />
 		<Projects />
@@ -50,6 +50,7 @@ import logo from '/fs.svg'
 </script>
 
 <style is:global>
+	@import url('https://fonts.googleapis.com/css2?family=Victor+Mono:wght@100;200;300;400;500;600;700&display=swap');
 	html {
     	scroll-behavior: smooth;
 	}
@@ -59,4 +60,21 @@ import logo from '/fs.svg'
 	.text-balance {
 		text-wrap: balance;
 	}
+	::-webkit-scrollbar {
+	width: 10px; 
+	}
+
+	::-webkit-scrollbar-track {
+	background-color: #555; 
+	}
+
+	::-webkit-scrollbar-thumb {
+	background-color: rgb(255, 192, 83);
+	
+	}
+
+	::-webkit-scrollbar-thumb:hover {
+	background-color: #f2f2f2;
+	}
+
 </style>

@@ -14,6 +14,9 @@ module.exports = {
 			},
 			boxShadow: {
 				lowShadow: '2px 2px 6px rgba(0,0,0, 0.3);'
+			},
+			fontFamily: {
+				VictorMono: 'Victor Mono'
 			}
 		},
 	},
