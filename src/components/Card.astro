@@ -2,43 +2,10 @@
 const { title, desc, imgURL, url } = Astro.props;
 ---
 
-<article class="flex flex-col justify-between h-52 w-52 rounded-lg shadow-md relative overflow-hidden">
+<article class="flex flex-col justify-between h-80 w-80 rounded-lg shadow-md hover:shadow-xl duration-300">
     <img src={imgURL} alt={`${title} project.`} class="h-[50%] rounded-t" width="2798px" height="1514px">
     <h3 class="text-slate-600 text-xs text-center px-2 text-balance uppercase font-bold">{title}</h3>
     <p class="text-slate-500 text-center text-balance text-xs p-3 rounded-b">{desc}</p>
-    <div class="contentHoverArticle rounded">
-        <a href={url} class="rounded px-3 py-2 bg-slate-700 text-white hover:scale-110 duration-300 active:opacity-75">VIEW CODE</a>
-    </div>
+    <a href={url} class="w-[50%] text-center self-center rounded bg-slate-700 text-white hover:bg-slate-600 duration-300 active:opacity-75">VIEW CODE</a>
 </article>
 
-<style>
-    .contentHoverArticle {
-  font-weight: 800;
-  position: absolute;
-  display: flex;
-  top: 0;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  width: 100%;
-  backdrop-filter: blur(2px);
-  opacity: 0;
-  transition: opacity 0.3s, transform 0.3s;
-}
-
-article:hover .contentHoverArticle {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-@keyframes articleHover {
-  0% {
-    transform: translateY(-100%);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-
-
-</style>
