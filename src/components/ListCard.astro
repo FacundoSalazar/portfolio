@@ -1,42 +1,39 @@
 ---
-import Card from './Card.astro'
-import TAC from '../assets/tac.webp'
+import Card from "./Card.astro";
+
+const data = [
+    {
+        imageURL: "/MosteiroApp.png",
+        title: "Hugo Mosteiro Amoblamientos",
+        desc: "Landing Page with AstroJS, TailwindCSS. Server-side Rendering for Pages.",
+        url: "https://github.com/ValentinSalazar/mosteiro",
+    },
+    {
+        imageURL: "/tac.webp",
+        title: "Trenes Argentinos Cargas",
+        desc: "CRUD App. Classified Registers. Statistics Map. VanillaJS & SASS.",
+        url: "https://github.com/ValentinSalazar/TAC",
+    },
+    {
+        imageURL: "/tac.webp",
+        title: "Importify",
+        desc: "eCommerce with NextJS14, MongoDB, TailwindCSS.",
+        url: "https://github.com/ValentinSalazar/TAC",
+    },
+];
 ---
-<div class="grid grid-cols-1 place-items-center gap-10 md:grid-cols-2 lg:grid-cols-3">
-    <Card
-        imgURL={TAC}
-        title="Trenes Argentinos Cargas"
-        desc="CRUD App. Classified Registers. Statistics Map."
-        url="https://github.com/FacundoSalazar/TAC"
-    />
-    <Card
-        imgURL={TAC}
-        title="Trenes Argentinos Cargas"
-        desc="CRUD App. Classified Registers. Statistics Map."
-        url="https://github.com/FacundoSalazar/TAC"
-    />
-    <Card
-        imgURL={TAC}
-        title="Trenes Argentinos Cargas"
-        desc="CRUD App. Classified Registers. Statistics Map."
-        url="https://github.com/FacundoSalazar/TAC"
-    />
-    <Card
-        imgURL={TAC}
-        title="Trenes Argentinos Cargas"
-        desc="CRUD App. Classified Registers. Statistics Map."
-        url="https://github.com/FacundoSalazar/TAC"
-    />
-    <Card
-        imgURL={TAC}
-        title="Trenes Argentinos Cargas"
-        desc="CRUD App. Classified Registers. Statistics Map."
-        url="https://github.com/FacundoSalazar/TAC"
-    />
-    <Card
-        imgURL={TAC}
-        title="Trenes Argentinos Cargas"
-        desc="CRUD App. Classified Registers. Statistics Map."
-        url="https://github.com/FacundoSalazar/TAC"
-    />
+
+<div
+    class="grid grid-cols-1 place-items-center gap-10 md:grid-cols-2 lg:grid-cols-3"
+>
+    {
+        data.map((element) => (
+            <Card
+                imgURL={element.imageURL}
+                title={element.title}
+                desc={element.desc}
+                url={element.url}
+            />
+        ))
+    }
 </div>

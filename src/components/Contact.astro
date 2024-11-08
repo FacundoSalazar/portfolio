@@ -3,38 +3,78 @@ import SectionTitle from "./SectionTitle.astro";
 import InputForm from "./InputForm.astro";
 ---
 
-<section id="contact" class=" w-screen flex justify-center flex-col p-10 items-center">
-    <SectionTitle sectionTitle="BE IN TOUCH"/>
+<section
+    id="contact"
+    class="w-screen flex justify-center flex-col p-10 items-center"
+>
+    <SectionTitle sectionTitle="BE IN TOUCH" />
     <form action="" class="flex flex-col w-[80vw] gap-5 mt-10 md:items-center">
         <div class="flex flex-col gap-3">
-            <InputForm id="name" label="Write your name or company" type="text" placeholder="Name"/>
-            <InputForm id="email" label="Write your email" type="email" placeholder="Email"/>
+            <InputForm
+                id="name"
+                label="Type your name or company"
+                type="text"
+                placeholder="Name"
+            />
+            <InputForm
+                id="email"
+                label="Type your email"
+                type="email"
+                placeholder="Email"
+            />
         </div>
-        <label for="textarea" class="text-center text-slate-700 font-semibold">What can I do for you?</label>
-            <textarea id="textarea" name="textarea" id="" cols="30" rows="5" class="border text-center resize-none bg-transparent p-5 rounded-md border-slate-600 outline-none placeholder:text-slate-500 text-slate-700 md:w-[50vw] lg:w-[35vw]" placeholder="Write here and we'll be in touch.." />
-            <input id="submit" type="submit" value="SUBMIT" class="font-bold cursor-pointer w-[50%] self-center rounded-full text-white py-2 tracking-widest shadow-lowShadow bg-slate-700 transition-colors active:opacity-60 hover:text-slate-700 hover:bg-secondaryColor duration-300 md:w-[25%]" />
+        <label for="textarea" class="text-center text-slate-700 font-semibold"
+            >What can I do for you?</label
+        >
+        <textarea
+            id="textarea"
+            name="textarea"
+            id=""
+            cols="30"
+            rows="5"
+            class="border text-center resize-none bg-transparent p-5 rounded-md border-slate-600 outline-none placeholder:text-slate-500 text-slate-700 md:w-[50vw] lg:w-[35vw]"
+            placeholder="Type here and we'll be in touch.."></textarea>
+        <input
+            id="submit"
+            type="submit"
+            value="SUBMIT"
+            class="font-bold cursor-pointer w-[50%] self-center rounded-full text-white py-2 tracking-widest shadow-lowShadow bg-slate-700 transition-colors active:opacity-60 hover:text-slate-700 hover:bg-secondaryColor duration-300 md:w-[25%]"
+        />
     </form>
 </section>
 
 <script>
-    const nameField = document.querySelector('#name');
-    const emailField = document.querySelector('#email');
-    const textField = document.querySelector('#textarea');
-    const submit = document.querySelector('#submit')
-    
+    const nameField = document.querySelector("#name");
+    const emailField = document.querySelector("#email");
+    const textField = document.querySelector("#textarea");
+    const submit = document.querySelector("#submit");
+
     const dataEmail = {};
-    submit.addEventListener('click', (event) => {
+    submit.addEventListener("click", (event) => {
         event.preventDefault();
-        const areCompleteFields = (nameField.value === "") || (emailField.value === "" || !emailField.value.includes("@")) || (textField.value === "");
+        const areCompleteFields =
+            nameField.value === "" ||
+            emailField.value === "" ||
+            !emailField.value.includes("@") ||
+            textField.value === "";
         if (areCompleteFields) {
-            alert('There are empty fields. Please, complete them.')
-        }
-        else {
+            alert("There are empty fields. Please, complete them.");
+        } else {
             dataEmail["name"] = nameField.value;
             dataEmail["email"] = emailField.value;
             dataEmail["textarea"] = textField.value;
-            console.log(dataEmail)
+            const form = `https://docs.google.com/forms/d/e/1FAIpQLSei4jNgxpdPmoXl4tG13qaNrRHXW3CRWXPk-O60PjJPi_RHeg/formResponse?submit=Submit&usp=pp_url&entry.1734692986=${nameField.value}&entry.479755694=${emailField.value}&entry.897572568=${textField.value}`;
+            try {
+                fetch(form, {
+                    method: "POST",
+                });
+            } catch (error) {
+                console.log(error);
+            }
+            alert("Your message has been sent!");
+            nameField.value = "";
+            emailField.value = "";
+            textField.value = "";
         }
-    })
-    
+    });
 </script>
