@@ -1,80 +1,98 @@
 ---
-import Header from '../components/Header.astro'
-import Main from '../components/Main.astro'
-import Projects from '../components/Projects.astro'
-import Contact from '../components/Contact.astro';
-import BackToHome from '../components/BackToHome.astro';
-import logo from '/fs.svg';
+import Header from "../components/Header.astro";
+import Main from "../components/Main.astro";
+import Projects from "../components/Projects.astro";
+import Contact from "../components/Contact.astro";
+import BackToHome from "../components/BackToHome.astro";
+import logo from "/fs.svg";
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="description" content="My name is Facundo Valentin Salazar and I'm a Computer Science and Engineering at Universidad de Buenos Aires. Take a look to my portfolio!">
-		<meta name="keywords" content="Web Development, Software Engineering, Software Engineer, Computer Science, HTML, CSS, Talwind, TailwindCSS, JavaScript, React, ReactJS, NodeJS, Astro, SQL, MySQL, MongoDB, NoSQL, Vite, Yarn.">
-		<link rel="icon" type="image/svg+xml" href={logo} />
-		<meta name="theme-color" content="#317EFB"/>
-		<meta name="author" content="Facundo Valentin Salazar">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta name="generator" content={Astro.generator} />
-		<title>Facundo Salazar</title>
-		<meta property="og:title" content="Facundo Salazar" />
-		<meta property="og:image" content={logo} />
-		<meta http-equiv="Content-Language" content="es" />
-	</head>
-	<body class="font-VictorMono overflow-x-hidden">
-		<Header />
-		<Main />
-		<Projects />
-		<Contact />
-		<BackToHome />
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="description"
+      content="My name is Facundo Valentin Salazar and I'm a Computer Science and Engineering at Universidad de Buenos Aires. Take a look to my portfolio!"
+    />
+    <meta
+      name="keywords"
+      content="Web Development, Software Engineering, Software Engineer, Computer Science, HTML, CSS, Talwind, TailwindCSS, JavaScript, React, ReactJS, NodeJS, Astro, SQL, MySQL, MongoDB, NoSQL, Vite, Yarn."
+    />
+    <link rel="icon" type="image/svg+xml" href={logo} />
+    <meta name="theme-color" content="#317EFB" />
+    <meta name="author" content="Facundo Valentin Salazar" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Facundo Salazar</title>
+    <meta property="og:title" content="Facundo Salazar" />
+    <meta property="og:image" content={logo} />
+    <meta http-equiv="Content-Language" content="es" />
+  </head>
+  <body class="font-VictorMono overflow-x-hidden">
+    <Header />
+    <Main />
+    <Projects />
+    <Contact />
+    <BackToHome />
+  </body>
 </html>
 
 <script>
-	const backToHome = document.querySelector('#backToHome');
-	window.addEventListener('scroll', () => {
-	if (window.pageYOffset > 300) {
-		backToHome.classList.remove('opacity-0');
-	} else{
-		backToHome.classList.add('opacity-0');
-	}
-	});
-	backToHome.addEventListener('click', () => {
-		window.scrollTo({
-			top: 0,
-			left: 0,
-			behavior: 'smooth'
-		})
-	})
+  const backToHome = document.querySelector("#backToHome");
+  window.addEventListener("scroll", () => {
+    if (window.pageYOffset > 300) {
+      backToHome.classList.remove("opacity-0");
+    } else {
+      backToHome.classList.add("opacity-0");
+    }
+  });
+  backToHome.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+  });
 </script>
 
 <style is:global>
-	@import url('https://fonts.googleapis.com/css2?family=Victor+Mono:wght@100;200;300;400;500;600;700&display=swap');
-	html {
-    	scroll-behavior: smooth;
-	}
-	body {
-		background-image: linear-gradient(to top, #9ceaff, #b7ecff, #cfefff, #e4f2ff, #f3f7ff, #f5f5ff, #f9f3ff, #fff0ff, #ffe2f3, #ffd6ce, #ffd59d, #ffe074);
-	}
-	.text-balance {
-		text-wrap: balance;
-	}
-	::-webkit-scrollbar {
-	width: 10px; 
-	}
+  @import url("https://fonts.googleapis.com/css2?family=Victor+Mono:wght@100;200;300;400;500;600;700&display=swap");
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-image: linear-gradient(
+      to top,
+      #9ceaff,
+      #b7ecff,
+      #cfefff,
+      #e4f2ff,
+      #f3f7ff,
+      #f5f5ff,
+      #f9f3ff,
+      #fff0ff,
+      #ffe2f3,
+      #ffd6ce,
+      #ffd59d,
+      #ffe074
+    );
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
 
-	::-webkit-scrollbar-track {
-	background-color: #555; 
-	}
+  ::-webkit-scrollbar-track {
+    background-color: #555;
+  }
 
-	::-webkit-scrollbar-thumb {
-	background-color: rgb(255, 192, 83);
-	
-	}
+  ::-webkit-scrollbar-thumb {
+    background-color: rgb(255, 192, 83);
+  }
 
-	::-webkit-scrollbar-thumb:hover {
-	background-color: #f2f2f2;
-	}
-
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #f2f2f2;
+  }
 </style>
