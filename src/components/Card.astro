@@ -8,9 +8,7 @@ const { title, desc, imgURL, url } = Astro.props;
     <img
         src={imgURL}
         alt={`${title} project.`}
-        class="h-[50%] rounded-t"
-        width="2798px"
-        height="1514px"
+        class="h-[50%] rounded-t object-cover object-top"
     />
     <h3
         class="text-slate-600 text-xs text-center px-2 text-balance uppercase font-bold"
@@ -22,6 +20,7 @@ const { title, desc, imgURL, url } = Astro.props;
     </p>
     <a
         href={url}
+        target="_blank"
         class="w-[50%] text-center self-center rounded bg-slate-700 text-white hover:bg-slate-600 duration-300 active:opacity-75"
         >VIEW CODE</a
     >
